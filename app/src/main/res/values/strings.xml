@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">InFiveYears</string>
+    <string name="results_over">That\'s All For Now</string>
+
 </resources>
