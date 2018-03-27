@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">InFiveYears</string>
     <string name="results_over">That\'s All For Now</string>
+    <string name="questions_list">Questions List</string>
+    <string name="start_over">start over</string>
 
 </resources>

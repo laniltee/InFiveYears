@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
+import lk.sliit.ctse.infiveyears.data.Question;
 import lk.sliit.ctse.infiveyears.data.QuestionData;
 
 /**
@@ -17,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Question library
     QuestionData questionData;
+
+    // UI Elements
+    TextView tv_questionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,18 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
+        // Initializing UI elements
+        tv_questionText = findViewById(R.id.tv_questionText);
 
+    }
+
+    public void getNextQuestion(View view){
+        if(questionData.hasNext()){
+            Question question = questionData.getNextQuestion();
+            tv_questionText.setText(question.getQuestion());
+        }else{
+            this.openResultsActivity(view);
+        }
     }
 
     public void openResultsActivity(View view){
