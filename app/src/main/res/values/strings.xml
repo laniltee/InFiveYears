@@ -3,5 +3,7 @@
     <string name="results_over">That\'s All For Now</string>
     <string name="questions_list">Questions List</string>
     <string name="start_over">start over</string>
+    <string name="let_s_get_started">let\'s get started</string>
+    <string name="see_my_previous_results">see my previous results</string>
 
 </resources>
