@@ -44,4 +44,8 @@ public class QuestionData {
         questionIndex++;
         return question;
     }
+
+    public int getQuestionIndex() {
+        return questionIndex;
+    }
 }

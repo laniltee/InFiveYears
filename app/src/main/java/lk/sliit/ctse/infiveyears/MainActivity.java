@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     // UI Elements
     TextView tv_questionText;
+    TextView tv_qIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Initializing UI elements
         tv_questionText = findViewById(R.id.tv_questionText);
+        tv_qIndex = findViewById(R.id.tv_qIndex);
 
     }
 
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         if(questionData.hasNext()){
             Question question = questionData.getNextQuestion();
             tv_questionText.setText(question.getQuestion());
+            String qIndex = questionData.getQuestionIndex() + " / 10";
+            tv_qIndex.setText(qIndex);
         }else{
             this.openResultsActivity(view);
         }

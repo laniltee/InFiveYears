@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:screenOrientation="portrait">
-        <activity android:name=".MainActivity" android:label="">
+        <activity android:name=".QuestionActivity" android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionActivity" android:label=""/>
+        <activity android:name=".MainActivity" android:label=""/>
         <activity android:name=".ResultsActivity" android:label=""></activity>
     </application>
 
