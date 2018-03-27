@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="56dp"
         android:text="Your Marriage !"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_resultTitle" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/ivIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -54,7 +54,7 @@
     <TextView
         android:id="@+id/tv_resultQuote"
         android:layout_width="335dp"
-        android:layout_height="75dp"
+        android:layout_height="66dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
@@ -65,7 +65,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/ivIcon" />
 
     <Button
         android:id="@+id/btn_showNextResult"
@@ -81,8 +81,9 @@
         android:textColor="@color/lightGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_resultQuote" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_resultQuote"
+        app:layout_constraintVertical_bias="0.326" />
 
 </android.support.constraint.ConstraintLayout>

@@ -2,11 +2,16 @@ package lk.sliit.ctse.infiveyears;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.HashMap;
 
 import lk.sliit.ctse.infiveyears.data.Result;
 import lk.sliit.ctse.infiveyears.data.ResultsData;
@@ -20,11 +25,19 @@ public class ResultsActivity extends AppCompatActivity {
     TextView tvResultSubTitle;
     TextView tvResultQuote;
     Button btnShowNextResult;
+    ImageView ivIcon;
+
+    // Icon set
+    HashMap<String, Integer> hashMap = new HashMap<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+
+        //Hiding the app bar
+        getSupportActionBar().hide();
 
         // Initializing data fetch helper
         resultsData = new ResultsData();
@@ -34,6 +47,7 @@ public class ResultsActivity extends AppCompatActivity {
         tvResultSubTitle = findViewById(R.id.tv_resultSubTitle);
         tvResultTitle = findViewById(R.id.tv_resultTitle);
         btnShowNextResult = findViewById(R.id.btn_showNextResult);
+        ivIcon = findViewById(R.id.ivIcon);
 
     }
 
@@ -45,6 +59,13 @@ public class ResultsActivity extends AppCompatActivity {
             tvResultTitle.setText(result.getTitle());
             tvResultSubTitle.setText(result.getSubTitle());
             tvResultQuote.setText(result.getQuote());
+
+            // Setting icon in image view
+            String imageUri = "@drawable/" + result.getIcon();
+            int imageResource = getResources().getIdentifier(imageUri, null, getPackageName());
+            Drawable drawable = getResources().getDrawable(imageResource);
+            ivIcon.setImageDrawable(drawable);
+
             currentView.setBackgroundColor(Color.parseColor(result.getColor()));
             btnShowNextResult.setTextColor(Color.parseColor(result.getColor()));
         }else{

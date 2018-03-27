@@ -9,6 +9,7 @@ public class ResultsData {
     private List<String> resultSubTitles = new ArrayList<>();
     private List<String> quotes = new ArrayList<>();
     private List<String> colors = new ArrayList<>();
+    private List<String> icons = new ArrayList<>();
     private int resultIndex;
 
     public ResultsData() {
@@ -40,6 +41,12 @@ public class ResultsData {
         colors.add("#8BC34A");
         colors.add("#3F51B5");
 
+        icons.add("ic_cat");
+        icons.add("ic_couple");
+        icons.add("ic_garage");
+        icons.add("ic_cat");
+        icons.add("ic_home");
+
     }
 
     public boolean hasNext(){
@@ -50,7 +57,7 @@ public class ResultsData {
         Result result = new Result(
                 resultTitles.get(resultIndex),
                 resultSubTitles.get(resultIndex),
-                "",
+                icons.get(resultIndex),
                 quotes.get(resultIndex),
                 colors.get(resultIndex)
         );
