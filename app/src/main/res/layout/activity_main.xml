@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:id="@+id/activity_main">
 
     <ImageView
         android:id="@+id/imageView"
@@ -27,7 +28,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:text="Question Goes Like This !"
+        android:text="@string/question_goes_like_this"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,18 +48,19 @@
         app:srcCompat="@drawable/ic_objective_searching" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/et_answer"
+        android:layout_width="333dp"
+        android:layout_height="47dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button"
         android:ems="10"
-        android:hint="Your answer here."
+        android:hint="@string/your_answer_here"
         android:inputType="textPersonName"
         android:singleLine="false"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@color/light_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
@@ -75,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/et_answer"
         app:srcCompat="@drawable/ic_right_arrow" />
 
     <Button
@@ -122,7 +124,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="1 / 10"
-        android:textColor="@color/cyan"
+        android:textColor="@color/light_black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView"

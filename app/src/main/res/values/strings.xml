@@ -8,7 +8,9 @@
     <string name="go_back">Go back</string>
     <string name="thank1">Thank you for taking apart !</string>
     <string name="thank2">That\'s all we can tell !</string>
-    <string name="thank3">Don\'t wait for it to happen. Make it happen. Make your own future. Make your own hope. Make your own love.</string>
+    <string name="thank3">\"Don\'t wait for it to happen. Make it happen. Make your own future. Make your own hope. Make your own love.\"</string>
     <string name="thank4">Take me back</string>
+    <string name="question_goes_like_this">Question Goes Like This !</string>
+    <string name="your_answer_here">Your answer here.</string>
 
 </resources>
