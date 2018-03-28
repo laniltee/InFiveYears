@@ -1,5 +1,6 @@
 package lk.sliit.ctse.infiveyears;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -51,10 +52,14 @@ public class ResultsActivity extends AppCompatActivity {
 
     }
 
-    public void getNextResult(View view){
+    public void getNextResult(View view) {
+        if (btnShowNextResult.getText().toString().equals("Take me back")) {
+            this.openHomeActivity(view);
+            return;
+        }
         View currentView = findViewById(R.id.activity_result);
         Result result;
-        if(resultsData.hasNext()){
+        if (resultsData.hasNext()) {
             result = resultsData.getNextResult();
             tvResultTitle.setText(result.getTitle());
             tvResultSubTitle.setText(result.getSubTitle());
@@ -68,14 +73,23 @@ public class ResultsActivity extends AppCompatActivity {
 
             currentView.setBackgroundColor(Color.parseColor(result.getColor()));
             btnShowNextResult.setTextColor(Color.parseColor(result.getColor()));
-        }else{
-            this.openQuestionActivity(view);
+        } else {
+            tvResultTitle.setText(R.string.thank1);
+            tvResultSubTitle.setText(R.string.thank2);
+            tvResultQuote.setText(R.string.thank3);
+            btnShowNextResult.setText(R.string.thank4);
+            //this.openQuestionActivity(view);
         }
     }
 
 
-    public void openQuestionActivity(View view){
+    public void openQuestionActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openHomeActivity(View view) {
+        Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
     }
 }

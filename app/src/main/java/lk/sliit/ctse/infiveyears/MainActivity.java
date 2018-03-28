@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             String qIndex = questionData.getQuestionIndex() + " / 10";
             tv_qIndex.setText(qIndex);
         }else{
-            this.openResultsActivity(view);
+            this.openCompleteActivity(view);
         }
     }
 
@@ -60,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void openWelcomeActivity(View view){
         Intent intent = new Intent(this, QuestionActivity.class);
+        startActivity(intent);
+    }
+
+    public void openCompleteActivity(View view){
+        Intent intent = new Intent(this, Complete.class);
         startActivity(intent);
     }
 }
