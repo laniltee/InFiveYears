@@ -45,6 +45,17 @@ public class QuestionData {
         return question;
     }
 
+    public Question getQuestionById(int index) {
+        Question question = new Question(
+                questionTitles.get(index),
+                "",
+                "",
+                "boolean",
+                colors.get(index)
+        );
+        return question;
+    }
+
     public int getQuestionIndex() {
         return questionIndex;
     }

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Question library
     QuestionData questionData;
+    Question question;
 
     // UI Elements
     TextView tv_questionText;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         tv_qIndex = findViewById(R.id.tv_qIndex);
         et_answer = findViewById(R.id.et_answer);
 
-        this.getNextQuestion(null);
+        this.getFirstQuestion();
 
     }
 
@@ -77,31 +78,37 @@ public class MainActivity extends AppCompatActivity {
         }
         if (questionData.hasNext()) {
 
-            et_answer.setText("");
-            Question question = questionData.getNextQuestion();
-            tv_questionText.setText(question.getQuestion());
-            String qIndex = questionData.getQuestionIndex() + " / 10";
-            tv_qIndex.setText(qIndex);
-
             // Saving user's answer to DB
-            if (questionData.getQuestionIndex() > 0) {
+            if (questionData.getQuestionIndex() >= 0) {
                 realm.beginTransaction();
 
                 Answer savingAnswer = new Answer();
                 savingAnswer.setQuestion(question.getQuestion());
-                savingAnswer.setIndex(String.valueOf(questionData.getQuestionIndex()));
+                savingAnswer.setIndex(String.valueOf(questionData.getQuestionIndex() - 1));
                 savingAnswer.setAnswer(answer);
 
                 realm.copyToRealmOrUpdate(savingAnswer);
                 realm.commitTransaction();
             }
 
+            et_answer.setText("");
+            question = questionData.getNextQuestion();
+            tv_questionText.setText(question.getQuestion());
+            String qIndex = questionData.getQuestionIndex() + " / 10";
+            tv_qIndex.setText(qIndex);
 
             View currentView = findViewById(R.id.activity_main);
             currentView.setBackgroundColor(Color.parseColor(question.getColor()));
         } else {
             this.openCompleteActivity(view);
         }
+    }
+
+    public void getFirstQuestion(){
+        question = questionData.getNextQuestion();
+        tv_questionText.setText(question.getQuestion());
+        String qIndex = questionData.getQuestionIndex() + " / 10";
+        tv_qIndex.setText(qIndex);
     }
 
     public void openResultsActivity(View view) {
