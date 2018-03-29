@@ -55,6 +55,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/rounded_button"
+        android:onClick="loadPreviousAnswers"
         android:text="@string/see_my_previous_results"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
