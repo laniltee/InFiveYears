@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // Initializing DB connection
-        // Initializing Realm Database
+        // Initializing Realm D11atabase
         Realm.init(this);
         try {
             realm = Realm.getDefaultInstance();
@@ -100,11 +100,22 @@ public class MainActivity extends AppCompatActivity {
             View currentView = findViewById(R.id.activity_main);
             currentView.setBackgroundColor(Color.parseColor(question.getColor()));
         } else {
+            // Saving answer of last question to DB
+            realm.beginTransaction();
+
+            Answer savingAnswer = new Answer();
+            savingAnswer.setQuestion(question.getQuestion());
+            savingAnswer.setIndex(String.valueOf(questionData.getQuestionIndex() - 1));
+            savingAnswer.setAnswer(answer);
+
+            realm.copyToRealmOrUpdate(savingAnswer);
+            realm.commitTransaction();
+
             this.openCompleteActivity(view);
         }
     }
 
-    public void getFirstQuestion(){
+    public void getFirstQuestion() {
         question = questionData.getNextQuestion();
         tv_questionText.setText(question.getQuestion());
         String qIndex = questionData.getQuestionIndex() + " / 10";
