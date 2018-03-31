@@ -50,6 +50,9 @@ public class ResultsActivity extends AppCompatActivity {
         btnShowNextResult = findViewById(R.id.btn_showNextResult);
         ivIcon = findViewById(R.id.ivIcon);
 
+        // Loading the first item
+        this.getNextResult(null);
+
     }
 
     public void getNextResult(View view) {
@@ -78,6 +81,12 @@ public class ResultsActivity extends AppCompatActivity {
             tvResultSubTitle.setText(R.string.thank2);
             tvResultQuote.setText(R.string.thank3);
             btnShowNextResult.setText(R.string.thank4);
+
+            // Setting icon in image view
+            String imageUri = "@drawable/" + "ic_home";
+            int imageResource = getResources().getIdentifier(imageUri, null, getPackageName());
+            Drawable drawable = getResources().getDrawable(imageResource);
+            ivIcon.setImageDrawable(drawable);
             //this.openQuestionActivity(view);
         }
     }
@@ -92,4 +101,5 @@ public class ResultsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuestionActivity.class);
         startActivity(intent);
     }
+
 }

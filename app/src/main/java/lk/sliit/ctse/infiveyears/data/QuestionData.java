@@ -12,20 +12,30 @@ public class QuestionData {
 
     public QuestionData() {
 
-        questionTitles.add("Tell us your name.");
+        questionTitles.add("Before we start, We need to know your name.");
         questionTitles.add("In which year you were born?");
         questionTitles.add("Are you in a relationship?");
         questionTitles.add("Are you a optimistic person?");
-        questionTitles.add("What do you prefer .. .. Android or iOS?");
+        questionTitles.add("How many people depend upon you ?");
+        questionTitles.add("Do you have a permanent job ?");
+        questionTitles.add("Who do you prefer, cats or dogs ?");
+        questionTitles.add("Do you have a emergency fund");
+        questionTitles.add("Do you have a life insurance ?");
+        questionTitles.add("What is the last time you went to a hospital ?");
 
         questionIndex = 0;
 
 
         colors.add("#E91E63");
-        colors.add("#00BCD4");
-        colors.add("#9C27B0");
-        colors.add("#8BC34A");
+        colors.add("#7E57C2");
         colors.add("#3F51B5");
+        colors.add("#0097A7");
+        colors.add("#4CAF50");
+        colors.add("#FFF176");
+        colors.add("#9E9D24");
+        colors.add("#795548");
+        colors.add("#2E7D32");
+        colors.add("#01579B");
 
     }
 

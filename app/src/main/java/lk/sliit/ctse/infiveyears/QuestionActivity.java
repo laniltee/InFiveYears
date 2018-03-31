@@ -42,8 +42,12 @@ public class QuestionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openAnswersActivity(View view){
+        Intent intent = new Intent(this, AnswersActivity.class);
+        startActivity(intent);
+    }
+
     public void loadPreviousAnswers(View view){
-        System.out.println();
         RealmResults<Answer> results = realm.where(Answer.class).findAllAsync();
         results.load();
         for(Answer answer:results){

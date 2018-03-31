@@ -12,7 +12,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".QuestionActivity"
-            android:label="">
+            android:label=""
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,11 +22,16 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="" />
+            android:label=""
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResultsActivity"
-            android:label="" />
-        <activity android:name=".Complete"></activity>
+            android:label=""
+            android:screenOrientation="portrait" />
+        <activity android:name=".Complete"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AnswersActivity"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

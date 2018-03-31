@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // Initializing DB connection
-        // Initializing Realm D11atabase
+        // Initializing Realm Database
         Realm.init(this);
         try {
             realm = Realm.getDefaultInstance();
@@ -135,5 +135,10 @@ public class MainActivity extends AppCompatActivity {
     public void openCompleteActivity(View view) {
         Intent intent = new Intent(this, Complete.class);
         startActivity(intent);
+    }
+
+    public void reloadActivity(View view){
+        finish();
+        startActivity(getIntent());
     }
 }

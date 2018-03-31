@@ -23,12 +23,13 @@
 
     <TextView
         android:id="@+id/tv_questionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="304dp"
+        android:layout_height="54dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="@string/question_goes_like_this"
+        android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,13 +107,13 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="8dp"
-        android:onClick="openResultsActivity"
-        android:text="@string/start_over"
         android:drawableLeft="@drawable/ic_refresh_black_24dp"
+        android:drawablePadding="10dp"
+        android:onClick="reloadActivity"
+        android:text="@string/start_over"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:drawablePadding="10dp"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
 
     <TextView
