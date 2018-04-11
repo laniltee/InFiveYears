@@ -56,19 +56,26 @@ public class AnswersActivity extends AppCompatActivity {
             listItems = new String[1];
             listItems[0] = "YOU HAVEN'T ANSWERED ANY OF THE QUESTIONS";
         }else{
-            listItems = new String[results.size()];
+            listItems = new String[10];
             for(Answer answer:results){
 
                 String question = answer.getQuestion();
                 String answered = answer.getAnswer();
+                try{
+                    int id = Integer.parseInt(answer.getIndex());
+                    System.out.println("Valid id " + id);
+                    if(answered.matches("")){
+                        listItems[index] = question + ": " + "NOT_ANSWERED";
+                    }else{
+                        listItems[index] = question + ": " + answered;
+                    }
+                    index++;
+                    System.out.println(answer.toString());
+                }catch (Exception e){
 
-                if(answered.matches("")){
-                    listItems[index] = question + ": " + "NOT_ANSWERED";
-                }else{
-                    listItems[index] = question + ": " + answered;
                 }
-                index++;
-                System.out.println(answer.toString());
+
+
             }
 
         }
